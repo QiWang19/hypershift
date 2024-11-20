@@ -617,6 +617,20 @@ TODO(alberto): add additional validation for the map key/values.</p>
 <p>Tolerations when specified, define what custome tolerations are added to the hcp pods.</p>
 </td>
 </tr>
+<tr>
+<td>
+<code>imagePolicy</code></br>
+<em>
+<a href="https://docs.openshift.com/container-platform/4.10/rest_api/config_apis/config-apis-index.html">
+github.com/openshift/api/config/v1alpha1.ImagePolicy
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>ImagePolicy holds namespace-wide configuration for image signature verification</p>
+</td>
+</tr>
 </table>
 </td>
 </tr>
@@ -5268,6 +5282,20 @@ TODO(alberto): add additional validation for the map key/values.</p>
 <td>
 <em>(Optional)</em>
 <p>Tolerations when specified, define what custome tolerations are added to the hcp pods.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>imagePolicy</code></br>
+<em>
+<a href="https://docs.openshift.com/container-platform/4.10/rest_api/config_apis/config-apis-index.html">
+github.com/openshift/api/config/v1alpha1.ImagePolicy
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>ImagePolicy holds namespace-wide configuration for image signature verification</p>
 </td>
 </tr>
 </tbody>

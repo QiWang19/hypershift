@@ -19,6 +19,7 @@ package v1beta1
 
 import (
 	v1 "github.com/openshift/api/config/v1"
+	configv1alpha1 "github.com/openshift/api/config/v1alpha1"
 	hypershiftv1beta1 "github.com/openshift/hypershift/api/hypershift/v1beta1"
 	corev1 "k8s.io/api/core/v1"
 )
@@ -54,6 +55,7 @@ type HostedClusterSpecApplyConfiguration struct {
 	OLMCatalogPlacement              *hypershiftv1beta1.OLMCatalogPlacement               `json:"olmCatalogPlacement,omitempty"`
 	NodeSelector                     map[string]string                                    `json:"nodeSelector,omitempty"`
 	Tolerations                      []corev1.Toleration                                  `json:"tolerations,omitempty"`
+	ImagePolicy 					 *configv1alpha1.ImagePolicy 						  `json:"imagePolicy,omitempty"`
 }
 
 // HostedClusterSpecApplyConfiguration constructs an declarative configuration of the HostedClusterSpec type for use with
@@ -301,5 +303,10 @@ func (b *HostedClusterSpecApplyConfiguration) WithTolerations(values ...corev1.T
 	for i := range values {
 		b.Tolerations = append(b.Tolerations, values[i])
 	}
+	return b
+}
+
+func (b *HostedClusterSpecApplyConfiguration) WithImagePolicy(value configv1alpha1.ImagePolicy) *HostedClusterSpecApplyConfiguration {
+	b.ImagePolicy = &value
 	return b
 }

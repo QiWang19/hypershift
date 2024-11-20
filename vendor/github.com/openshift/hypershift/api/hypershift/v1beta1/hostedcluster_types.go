@@ -5,6 +5,7 @@ import (
 	"strings"
 
 	configv1 "github.com/openshift/api/config/v1"
+	configv1alpha1 "github.com/openshift/api/config/v1alpha1"
 	"github.com/openshift/hypershift/api/util/ipnet"
 	corev1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/api/resource"
@@ -610,6 +611,11 @@ type HostedClusterSpec struct {
 	//
 	// +optional
 	Tolerations []corev1.Toleration `json:"tolerations,omitempty"`
+
+	// ImagePolicy holds namespace-wide configuration for image signature verification
+	//
+	// +optional
+	ImagePolicy configv1alpha1.ImagePolicy `json:"imagePolicy,omitempty"`
 }
 
 // OLMCatalogPlacement is an enum specifying the placement of OLM catalog components.
